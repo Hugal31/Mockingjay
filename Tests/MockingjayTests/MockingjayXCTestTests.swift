@@ -19,4 +19,9 @@ class MockingjayXCTestTests: XCTestCase {
     mockingjayRemoveStubOnTearDown = false
     XCTAssertFalse(mockingjayRemoveStubOnTearDown)
   }
+
+  static var allTests: [(String, (MockingjayXCTestTests) -> () -> ())] = [
+    ("testEnablesRemovingStubsByDefault", testEnablesRemovingStubsByDefault),
+    ("testUserCanDisableRemovingStubst", testUserCanDisableRemovingStubst),
+  ]
 }
