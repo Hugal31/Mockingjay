@@ -16,6 +16,10 @@ class EverythingMatcherTests : XCTestCase {
     let request = URLRequest(url: URL(string: "https://api.palaverapp.com/")!)
     XCTAssertTrue(everything(request))
   }
+
+  static var allTests: [(String, (EverythingMatcherTests) -> () -> ())] = [
+      ("testEverythingMatcher", testEverythingMatcher),
+  ]
 }
 
 class URIMatcherTests : XCTestCase {
@@ -48,6 +52,15 @@ class URIMatcherTests : XCTestCase {
     let request = URLRequest(url: URL(string: "https://github.com/kylef/URITemplate")!)
     XCTAssertTrue(uri("/{username}/URITemplate")(request))
   }
+
+  static var allTests: [(String, (URIMatcherTests) -> () -> ())] = [
+    ("testExactFullURIMatches", testExactFullURIMatches),
+    ("testExactFullPathMatches", testExactFullPathMatches),
+    ("testExactFullURIMismatch", testExactFullURIMismatch),
+    ("testExactFullPathMismatch", testExactFullPathMismatch),
+    ("testVariableFullURIMatch", testVariableFullURIMatch),
+    ("testVariablePathMatch", testVariablePathMatch),
+  ]
 }
 
 class HTTPMatcherTests : XCTestCase {
@@ -64,4 +77,9 @@ class HTTPMatcherTests : XCTestCase {
 
     XCTAssertFalse(http(.patch, uri: "https://api.palaverapp.com/")(request))
   }
+
+  static var allTests: [(String, (HTTPMatcherTests) -> () -> ())] = [
+    ("testMethodURIMatch", testMethodURIMatch),
+    ("testMethodMismatch", testMethodMismatch),
+  ]
 }

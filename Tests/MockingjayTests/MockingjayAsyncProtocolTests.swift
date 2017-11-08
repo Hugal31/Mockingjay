@@ -123,5 +123,11 @@ class MockingjayAsyncProtocolTests: XCTestCase, URLSessionDataDelegate  {
   func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
     self.didReceiveDataHandler?(session, dataTask, data)
   }
+
+  static var allTests: [(String, (MockingjayAsyncProtocolTests) -> () -> ())] = [
+    ("testDownloadOfTextInChunks", testDownloadOfTextInChunks),
+    ("testDownloadOfAudioFileInChunks", testDownloadOfAudioFileInChunks),
+    ("testByteRanges", testByteRanges),
+  ]
   
 }

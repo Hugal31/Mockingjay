@@ -165,5 +165,11 @@ class MockingjayProtocolTests : XCTestCase {
     
     XCTAssert(startDate.addingTimeInterval(0.95).compare(Date()) == .orderedAscending)
   }
-  
+
+  static var allTests: [(String, (MockingjayProtocolTests) -> () -> ())] = [
+    ("testCannotInitWithUnknownRequest", testCannotInitWithUnknownRequest),
+    ("testProtocolReturnsErrorWithRegisteredStubError", testProtocolReturnsErrorWithRegisteredStubError),
+    ("testProtocolReturnsResponseWithLastRegisteredMatchingStub", testProtocolReturnsResponseWithLastRegisteredMatchingStub),
+    ("testDelay", testDelay),
+  ]  
 }

@@ -8,6 +8,12 @@
 
 import Foundation
 
+//! Project version number for Mockingjay.
+// FOUNDATION_EXPORT double MockingjayVersionNumber;
+
+//! Project version string for Mockingjay.
+// FOUNDATION_EXPORT const unsigned char MockingjayVersionString[];
+
 public enum Download: ExpressibleByNilLiteral, Equatable {
   public init(nilLiteral: ()) {
     self = .noContent

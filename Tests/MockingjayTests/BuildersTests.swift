@@ -107,4 +107,12 @@ class FailureBuilderTests : XCTestCase {
       XCTFail("Test Failure")
     }
   }
+
+  static var allTests: [(String, (FailureBuilderTests) -> () -> ())] = [
+    ("testFailure", testFailure),
+    ("testHTTP", testHTTP),
+    ("testHTTPDownloadStream", testHTTPDownloadStream),
+    ("testJSON", testJSON),
+    ("testJSONData", testJSONData),
+  ]
 }
